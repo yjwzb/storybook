@@ -69,8 +69,8 @@ function showTeaser(open){
 function updatePageControls(){$('#previous-page').disabled=!teaserOpen;$('#next-page').disabled=teaserOpen;}
 function finishTurn(a){
   view.isTurning=false;view.turnProgress=a.to;
-  if(a.commit&&a.to===1){teaserOpen=true;$('.controls-heading strong').textContent='02 / 05';$('.chapter-kicker').innerHTML='<span></span><b>CHAPTER 02 / 05</b><i>·</i><b>NEXT FOLD</b>';showTeaser(true);diorama.setFolded(true);showToast('A new fold is waiting beyond Lantern Valley.');}
-  else if(a.commit&&a.to===0){teaserOpen=false;$('.controls-heading strong').textContent='01 / 05';$('.chapter-kicker').innerHTML='<span></span><b>CHAPTER 01 / 05</b><i>·</i><b>INTENT</b>';showTeaser(false);diorama.setFolded(false);}
+  if(a.commit&&a.to===1){teaserOpen=true;$('#page-scrub').value='100';$('.controls-heading strong').textContent='02 / 05';$('.chapter-kicker').innerHTML='<span></span><b>CHAPTER 02 / 05</b><i>·</i><b>NEXT FOLD</b>';showTeaser(true);diorama.setFolded(true);showToast('A new fold is waiting beyond Lantern Valley.');}
+  else if(a.commit&&a.to===0){teaserOpen=false;$('#page-scrub').value='0';$('.controls-heading strong').textContent='01 / 05';$('.chapter-kicker').innerHTML='<span></span><b>CHAPTER 01 / 05</b><i>·</i><b>INTENT</b>';showTeaser(false);diorama.setFolded(false);}
   else if(teaserOpen){view.turnProgress=1;diorama.setFolded(true);}else{view.turnProgress=0;diorama.setFolded(false);}
   book.setTurn(view.turnProgress,1);updatePageControls();
 }
