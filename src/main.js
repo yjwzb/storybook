@@ -10,7 +10,7 @@ const chapters = [
   { id:'lighthouse', title:'The Lighthouse', region:'The Far Lantern Shore', hint:'The smallest light can guide the longest journey.', line:'At last, Pip’s lantern found the lighthouse waiting in the dark.', story:'The sea was ink-blue and the moon laid a silver road across it. Pip climbed the lighthouse steps with the little light from the beginning of the journey. A sailor penguin pulled the red lever. The lamp flashed twice, and far out on the water a red sail answered twice. Pip had carried the light all the way home.', note:'A light is not smaller because it is shared.', action:'Wake the lighthouse', plate:'PLATE 05', companion:'penguin' }
 ];
 const slugToIndex = Object.fromEntries(chapters.map((c,i)=>[c.id,i]));
-const state = { chapter:0, turn:0, turnDir:1, turnAnim:null, popIn:1, popElapsed:1, tableYaw:0, tableYawTarget:0, pointer:null, sailDrag:false, windmillAngle:0, windmillVelocity:0, gateBell:0, gateDoor:0, bridgePlanks:0, bookFlutter:0, lampFlash:0, boatAnswer:0, sound:false, audio:null, lastTime:0, t:0, toastTimer:0 };
+const state = { chapter:0, turn:0, turnDir:1, turnAnim:null, popIn:1, popElapsed:1, tableYaw:0, tableYawTarget:0, pointer:null, sailDrag:false, windmillAngle:0, windmillVelocity:0, gateBell:0, gateDoor:0, gateDoorTarget:0, bridgePlanks:0, bridgePlanksTarget:0, bookFlutter:0, lampFlash:0, boatAnswer:0, sound:false, audio:null, lastTime:0, t:0, toastTimer:0 };
 let width=innerWidth, height=innerHeight, dpr=1, atlas=null, atlasMeta=null, atlasReady=false;
 let commands=[];
 const TAU=Math.PI*2;
@@ -86,8 +86,8 @@ for(let i=0;i<18;i++){const x=-5.0+(i*1.73%9.8),y=-2.2+(i*1.13%4.0);addGrass(x,y
 for(let i=0;i<10;i++){const x=-4.8+(i*1.91%9.4),y=-2.05+(i*1.27%3.7);addFlower(x,y,.16,.65+(i%3)*.2,i%3===0?'#f1d7ad':i%3===1?'#d98f85':'#f0e7d0');}
 for(let i=0;i<9;i++){const x=-5.0+(i*1.31%9.8),y=-2.45+(i%3)*.44;addRock(x,y,.13,.25+(i%3)*.1,ch===4?'#73817a':'#aaa58c');}
 }
-function addGate(pop){const x=2.55,y=.85,z=.14,h=2.35*pop;addBox(x,y,z,1.5,.72,h,'#c9b99a');addBox(x-.49,y-.38,z+.2,.42,.12,1.35*pop,'#b7a582');addBox(x+.49,y-.38,z+.2,.42,.12,1.35*pop,'#b7a582');addPolyRoof(x,y,z+h-.05,1.9,.94,.68*pop,'#ad4f3e');addBox(x,y-.39,z+.04,.64,.08,1.12*pop,'#674b39');const door=state.gateDoor*pop;const dx=.32*Math.sin(door);addBox(x-.16-dx,y-.46,z+.05,.3,.06,1.02*pop,'#8c5d40');addBox(x+.16+dx,y-.46,z+.05,.3,.06,1.02*pop,'#8c5d40');addBox(x,y-.53,z+1.05*pop,.07,.05,.1,'#e9b03f');addBox(x,y-.4,z+h+.62*pop,.035,.035,.62*pop,'#916c45');pushPoly([[x,y-.4,z+h+.9*pop],[x+.55,y-.4,z+h+.78*pop],[x+.43,y-.4,z+h+.48*pop],[x,y-.4,z+h+.57*pop]],'#e9b03f');const bellA=state.gateBell*pop;const bx=x-.95+Math.sin(state.t*13)*bellA*.16;pushLine([[bx,y-.48,z+h+.05*pop],[bx+Math.sin(bellA)*.1,y-.48,z+h-.2*pop]],'#8b633f',2);addPrism(bx+Math.sin(bellA)*.1,y-.49,z+h-.42*pop,.16,.22*pop,'#d9a43f',9,'#edc45e');addPrism(bx+Math.sin(bellA)*.1,y-.49,z+h-.47*pop,.055,.04,'#8e6337',8);}
-function addBridge(pop){const x=2.55,y=.8,z=.14;for(const sx of [-1,1]){addBox(x+sx*1.25,y,z,.24,.35,2.35*pop,'#936a49');addBox(x+sx*1.25,y,z+2.25*pop,.48,.44,.18,'#ad8056');}for(let i=0;i<11;i++){const t=i/10,px=x-1.15+t*2.3,py=y-.32+Math.sin(t*Math.PI)*.32;const missing=i>=4&&i<=6;const slide=missing?(1-state.bridgePlanks)*(i===4?-1:i===6?1:0):0;addBox(px+slide*.58,py,z+.12*pop,.19,.55,.11*pop,'#a8754d');}
+function addGate(pop){const x=2.55,y=.85,z=.14,h=2.35*pop;addBox(x,y,z,1.5,.72,h,'#c9b99a');addBox(x-.49,y-.38,z+.2,.42,.12,1.35*pop,'#b7a582');addBox(x+.49,y-.38,z+.2,.42,.12,1.35*pop,'#b7a582');addPolyRoof(x,y,z+h-.05,1.9,.94,.68*pop,'#ad4f3e');addBox(x,y-.39,z+.04,.64,.08,1.12*pop,'#674b39');const door=state.gateDoor*pop;const dx=.92*Math.sin(door*Math.PI/2);addBox(x-.16-dx,y-.46,z+.05,.3,.06,1.02*pop,'#8c5d40');addBox(x+.16+dx,y-.46,z+.05,.3,.06,1.02*pop,'#8c5d40');addBox(x,y-.53,z+1.05*pop,.07,.05,.1,'#e9b03f');addBox(x,y-.4,z+h+.62*pop,.035,.035,.62*pop,'#916c45');pushPoly([[x,y-.4,z+h+.9*pop],[x+.55,y-.4,z+h+.78*pop],[x+.43,y-.4,z+h+.48*pop],[x,y-.4,z+h+.57*pop]],'#e9b03f');const bellA=state.gateBell*pop;const bx=x-.95+Math.sin(state.t*13)*bellA*.16;pushLine([[bx,y-.48,z+h+.05*pop],[bx+Math.sin(bellA)*.1,y-.48,z+h-.2*pop]],'#8b633f',2);addPrism(bx+Math.sin(bellA)*.1,y-.49,z+h-.42*pop,.16,.22*pop,'#d9a43f',9,'#edc45e');addPrism(bx+Math.sin(bellA)*.1,y-.49,z+h-.47*pop,.055,.04,'#8e6337',8);}
+function addBridge(pop){const x=2.55,y=.8,z=.14;for(const sx of [-1,1]){addBox(x+sx*1.25,y,z,.24,.35,2.35*pop,'#936a49');addBox(x+sx*1.25,y,z+2.25*pop,.48,.44,.18,'#ad8056');}for(let i=0;i<11;i++){const t=i/10,px=x-1.15+t*2.3,py=y-.32+Math.sin(t*Math.PI)*.32;const missing=i>=4&&i<=6;const slideX=missing?(1-state.bridgePlanks)*(i===4?-1.2:i===6?1.2:0):0;const slideY=missing&&i===5?(1-state.bridgePlanks)*-.9:0;addBox(px+slideX,py+slideY,z+.12*pop,.19,.55,.11*pop,'#a8754d');}
 for(let side of [-1,1]){const pts=[];for(let i=0;i<=16;i++){const t=i/16;pts.push([x-1.2+t*2.4,y+side*.26+Math.sin(t*Math.PI)*.36,z+2.1*pop-Math.sin(t*Math.PI)*.52*pop]);}pushLine(pts,'#8c684a',3);for(let i=0;i<9;i++){const t=i/8,px=x-1.2+t*2.4,py=y+side*.26+Math.sin(t*Math.PI)*.36;pushLine([[px,py,z+.3*pop],[px,py,z+2.12*pop]],'#9d7953',1.3);}}
 for(let i=0;i<5;i++){const x0=x-.9+i*.45;pushLine([[x0,y-.5,z+1.48*pop],[x0+.2,y-.5,z+1.32*pop]],i%2?'#d8a94a':'#bd5c48',3);}}
 function addBookHouse(pop){const x=2.45,y=.9,z=.14;addBox(x,y,z,.9,.72,1.1*pop,'#bca982');addBox(x,y-.4,z+.06,.25,.08,.78*pop,'#6d523a');const roofZ=z+1.45*pop;const left=[[x,y,roofZ+1.05*pop],[x-1.15,y-.15,roofZ],[x-.05,y-.58,roofZ-.04*pop]];const right=[[x,y,roofZ+1.05*pop],[x+1.15,y-.15,roofZ],[x+.05,y-.58,roofZ-.04*pop]];pushPoly(left,'#9f4d3e','#f0d9ae',2,3);pushPoly(right,'#e2c98f','#f8edcf',2,3);for(let i=0;i<5;i++){const t=i/5;pushLine([[x-t*1.0,y-.18,roofZ+.9*pop*(1-t)],[x-t*.05,y-.56,roofZ+.05*pop]],'#b28b59',1);pushLine([[x+t*1.0,y-.18,roofZ+.9*pop*(1-t)],[x+t*.05,y-.56,roofZ+.05*pop]],'#b28b59',1);}
@@ -221,8 +221,8 @@ function playSfx(kind='paper'){
 }
 function triggerProp(){
   const ch=state.chapter;
-  if(ch===0){state.gateBell=1;state.gateDoor=1;playSfx('bell');showToast('The old gate wakes with a bright clear note.');}
-  if(ch===1){state.bridgePlanks=1;playSfx('paper');showToast('The missing planks slide safely into place.');}
+  if(ch===0){state.gateBell=1;state.gateDoorTarget=1;playSfx('bell');showToast('The old gate wakes with a bright clear note.');}
+  if(ch===1){state.bridgePlanksTarget=1;playSfx('paper');showToast('The missing planks slide safely into place.');}
   if(ch===2){state.bookFlutter=1;playSfx('paper');showToast('The pages flutter open to the island map.');}
   if(ch===3){state.windmillVelocity+=3.2;playSfx('paper');showToast('The wind catches the sails.');}
   if(ch===4){state.lampSequence=1;state.lampClock=0;state.lampFlash=0;state.boatAnswer=0;playSfx('bell');showToast('Two flashes. Two answers from the sea.');}
@@ -260,6 +260,8 @@ function update(dt,now){
   }else state.popIn=1;
   state.tableYaw=lerp(state.tableYaw,state.tableYawTarget,1-Math.exp(-dt*5));
   state.gateBell*=Math.exp(-dt*2.8);
+  state.gateDoor=lerp(state.gateDoor,state.gateDoorTarget,1-Math.exp(-dt*3.1));
+  state.bridgePlanks=lerp(state.bridgePlanks,state.bridgePlanksTarget,1-Math.exp(-dt*3.5));
   state.bookFlutter*=Math.exp(-dt*2.2);
   if(state.windmillVelocity!==0){
     state.windmillAngle+=state.windmillVelocity*dt;
