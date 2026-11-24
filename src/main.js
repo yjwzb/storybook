@@ -119,7 +119,7 @@ function addBookPages(){const leftTurn=state.turnDir===-1?state.turn:0,rightTurn
 pushLine([[0,-3.28,.19],[0,3.28,.19]],'rgba(130,97,62,.32)',1.3);pushPoly([[-.16,-3.3,.2],[0,-3.43,.2],[.16,-3.3,.2]],'#9b5b46');}
 function addCharacterPair(ch,pop){const companion=chapters[ch].companion;addPuppet('pip',-2.8,-1.45,.17,pop,0,1.0);addPuppet(companion,-1.38,-1.48,.17,pop,1.6,.98);}
 function addDiorama(ch,pop){if(pop<=.01)return;const old=state.currentPop;state.currentPop=pop;addChapterDecor(ch,1);addLandmark(ch,1);addCharacterPair(ch,1);state.currentPop=old;}
-function render(){commands=[];addBookAndTable();addBookPages();const scenePop=state.turn>0?Math.max(0,1-smooth(0,1,state.turn)):state.popIn;addDiorama(state.chapter,scenePop);if(state.turn>0&&state.turn>.72&&state.chapter<4){const target=state.turnTarget??clamp(state.chapter+state.turnDir,0,4);const preview=smooth(.72,1,state.turn)*.72;addDiorama(target,preview);}
+function render(){commands=[];addBookAndTable();addBookPages();const scenePop=state.turn>0?Math.max(0,1-smooth(0,1,state.turn)):state.popIn;addDiorama(state.chapter,scenePop);if(state.turn>0&&state.turn>.72){const target=state.turnTarget??clamp(state.chapter+state.turnDir,0,4);const preview=smooth(.72,1,state.turn)*.72;addDiorama(target,preview);}
 commands.sort((a,b)=>b.z-a.z);ctx.setTransform(dpr,0,0,dpr,0,0);ctx.clearRect(0,0,width,height);const bg=ctx.createRadialGradient(width*.18,height*.08,0,width*.5,height*.45,Math.max(width,height)*.9);bg.addColorStop(0,'#52614a');bg.addColorStop(.45,state.chapter===4?'#1d3437':'#27483f');bg.addColorStop(1,'#101f1c');ctx.fillStyle=bg;ctx.fillRect(0,0,width,height);for(const c of commands)c.draw();}
 
 
