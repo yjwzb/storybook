@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1, user-scalable=no" />
+  <meta name="theme-color" content="#172e2a" />
+  <meta name="description" content="A tactile, interactive pop-up storybook. Follow Pip the fox across five paper-crafted islands." />
+  <link rel="manifest" href="./manifest.webmanifest" />
+  <link rel="icon" href="./public/icon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="./styles.css" />
+  <title>The Paper Island — A Pop-up Story</title>
+</head>
+<body>
+  <main class="app-shell" id="app">
+    <canvas id="world" aria-label="Interactive 3D pop-up storybook. Drag the right page left to turn forward, or the left page right to go back."></canvas>
+    <div class="vignette" aria-hidden="true"></div>
+    <div class="grain" aria-hidden="true"></div>
+    <header class="topbar">
+      <a class="brand" href="#gate" aria-label="The Paper Island home">
+        <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 36 36"><path d="M4 7.5c5-2.2 10-1.5 14 1.2v21c-4-2.7-9-3.4-14-1.2z"/><path d="M32 7.5c-5-2.2-10-1.5-14 1.2v21c4-2.7 9-3.4 14-1.2z"/><path d="M18 8.7v21"/><path d="M8 13c2.1-.5 4.1-.1 6 1"/><path d="M28 13c-2.1-.5-4.1-.1-6 1"/></svg></span>
+        <span class="brand-copy"><strong>The Paper Island</strong><small>A POP-UP STORY</small></span>
+      </a>
+      <div class="top-actions">
+        <button class="pill-button" id="reset-view" type="button"><span class="button-icon">↺</span><span>Reset view</span></button>
+        <button class="pill-button sound-button" id="sound-toggle" type="button" aria-pressed="false"><span class="button-icon" id="sound-icon">♫</span><span id="sound-label">Sound off</span></button>
+        <button class="pill-button map-button" id="map-open" type="button"><span class="button-icon">⌖</span><span>Map</span></button>
+      </div>
+    </header>
+    <section class="chapter-heading" aria-live="polite">
+      <div class="eyebrow" id="chapter-kicker">CHAPTER 01 / 05</div>
+      <h1 id="chapter-title">The Bell Gate</h1>
+      <p class="region-name" id="region-name">Meadow of Morrow</p>
+      <p class="gold-hint" id="chapter-hint">A little light can open a very old door.</p>
+    </section>
+    <section class="story-peek" aria-live="polite">
+      <div class="story-label">PIP’S JOURNEY</div>
+      <p id="story-line">Pip found a bell that had forgotten how to ring.</p>
+      <button class="text-button" id="read-open" type="button">Read this page <span aria-hidden="true">↗</span></button>
+    </section>
+    <section class="page-controls" aria-label="Page controls">
+      <div class="controls-topline"><span>DRAG THE PAGE TO TURN</span><span id="page-count">01 / 05</span></div>
+      <div class="controls-bottom">
+        <button class="arrow-button" id="prev-page" type="button" aria-label="Previous chapter">←</button>
+        <input id="page-slider" type="range" min="0" max="4" step="0.001" value="0" aria-label="Scrub story chapters" />
+        <button class="arrow-button" id="next-page" type="button" aria-label="Next chapter">→</button>
+      </div>
+      <div class="chapter-dots" id="chapter-dots" aria-label="Choose chapter">
+        <button type="button" data-chapter="0" aria-label="Chapter 1" class="active"></button>
+        <button type="button" data-chapter="1" aria-label="Chapter 2"></button>
+        <button type="button" data-chapter="2" aria-label="Chapter 3"></button>
+        <button type="button" data-chapter="3" aria-label="Chapter 4"></button>
+        <button type="button" data-chapter="4" aria-label="Chapter 5"></button>
+      </div>
+    </section>
+    <aside class="reading-card" id="reading-card" aria-hidden="true">
+      <button class="card-close" id="read-close" type="button" aria-label="Close story">×</button>
+      <div class="eyebrow">A PAGE FROM PIP’S JOURNAL</div>
+      <h2 id="read-title">The Bell Gate</h2>
+      <p class="reading-body" id="read-body"></p>
+      <div class="notebook-note"><span class="note-label">PIP’S NOTEBOOK</span><p id="pip-note"></p></div>
+      <button class="mustard-button" id="prop-action" type="button">Ring the old bell <span>↗</span></button>
+    </aside>
+    <section class="map-overlay" id="map-overlay" aria-hidden="true">
+      <div class="map-card">
+        <button class="card-close" id="map-close" type="button" aria-label="Close map">×</button>
+        <div class="eyebrow">THE ISLANDS, BY FOOT</div>
+        <h2>Where the light leads</h2>
+        <p class="map-intro">Five places. One small fox. A light to carry home.</p>
+        <div class="island-map" id="island-map">
+          <svg viewBox="0 0 520 260" role="img" aria-label="Map of the five story chapters"><path class="map-route" d="M70 174 C118 80 170 220 238 128 S360 52 445 156"/><path class="map-water" d="M15 220 Q110 190 168 224 T320 218 T505 218"/><path class="map-land" d="M35 147 Q45 55 142 48 Q197 4 260 58 Q330 12 393 63 Q485 75 475 177 Q416 235 334 206 Q265 253 189 205 Q95 239 35 147Z"/></svg>
+          <button class="map-pin pin-1 active" data-chapter="0"><b>1</b><span>The Bell Gate</span></button>
+          <button class="map-pin pin-2" data-chapter="1"><b>2</b><span>Rope Bridge</span></button>
+          <button class="map-pin pin-3" data-chapter="2"><b>3</b><span>Book House</span></button>
+          <button class="map-pin pin-4" data-chapter="3"><b>4</b><span>Windmill</span></button>
+          <button class="map-pin pin-5" data-chapter="4"><b>5</b><span>Lighthouse</span></button>
+        </div>
+        <div class="map-footer">FOLLOW THE DASHED PATH · KEEP THE LANTERN LIT</div>
+      </div>
+    </section>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <div class="mobile-turn-hint" id="mobile-hint">Swipe a page to turn the story</div>
+  </main>
+  <script type="module" src="./src/main.js"></script>
+</body>
+</html>
