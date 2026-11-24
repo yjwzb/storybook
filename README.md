@@ -14,7 +14,7 @@ A high-fidelity, tactile 3D storybook. The first rebuilt chapter is **The Lanter
 
 ## Run locally
 
-Use Node.js 20.19.5 or newer.
+Use Node.js 20.19.5 or newer for web development and Vite builds. Capacitor 8 native packaging commands require Node.js 22 or newer.
 
 ```bash
 npm install
