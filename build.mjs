@@ -1,0 +1,10 @@
+import fs from 'node:fs/promises';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+const root=path.dirname(fileURLToPath(import.meta.url));
+const out=path.join(root,'dist');
+await fs.rm(out,{recursive:true,force:true});
+await fs.mkdir(out,{recursive:true});
+for(const name of ['index.html','styles.css','manifest.webmanifest','sw.js','capacitor.config.json'])await fs.copyFile(path.join(root,name),path.join(out,name));
+for(const name of ['src','assets','public'])await fs.cp(path.join(root,name),path.join(out,name),{recursive:true});
+console.log('Built static web app into dist/');
