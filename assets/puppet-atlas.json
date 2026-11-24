@@ -196,7 +196,8 @@
         1
       ],
       "part": "tail",
-      "character": "owl"
+      "character": "owl",
+      "joint": "tail_root"
     },
     "owl-prop": {
       "x": 900,
@@ -299,7 +300,8 @@
         1
       ],
       "part": "tail",
-      "character": "frog"
+      "character": "frog",
+      "joint": "tail_root"
     },
     "frog-prop": {
       "x": 900,
@@ -506,7 +508,8 @@
         1
       ],
       "part": "tail",
-      "character": "hedgehog"
+      "character": "hedgehog",
+      "joint": "tail_root"
     },
     "hedgehog-prop": {
       "x": 900,
@@ -609,7 +612,8 @@
         1
       ],
       "part": "tail",
-      "character": "penguin"
+      "character": "penguin",
+      "joint": "tail_root"
     },
     "penguin-prop": {
       "x": 900,
