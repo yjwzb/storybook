@@ -7,7 +7,7 @@ A single-source interactive paper storybook for the browser, with a shared web r
 - A perspective 3D book on a dark green table, with a red-brown cover, page stack, spine and red ribbon.
 - Five procedural low-poly paper dioramas: The Bell Gate, The Rope Bridge, The Book House, The Windmill and The Lighthouse.
 - Pip the fox appears on every spread with an owl, frog, mouse, hedgehog or sailor penguin companion.
-- A local puppet texture atlas (`assets/puppet-atlas.svg`) and rectangle/pivot manifest (`assets/puppet-atlas.json`). Each puppet is assembled from separate head, eyes, body, arms, feet, tail/wing and prop cards.
+- A local transparent puppet texture atlas (`assets/puppet-atlas.svg`), rectangle/pivot manifest (`assets/puppet-atlas.json`) and white-background parts reference sheet (`assets/puppet-parts-sheet.svg`). Each puppet is assembled from separate head, eyes, body, arms, feet, tail/wing and prop cards.
 - A subdivided page mesh that curls around a moving fold, changes to the next print on its back, and folds the pop-up pieces down as the page rises.
 - Interactive chapter props: ring the bell/open the gate; slide bridge planks into place; flutter the Book House roof pages; drag the windmill sails with inertia; pull the lighthouse lever for two lamp flashes and two boat answers.
 - Page drag, arrow keys, continuous chapter scrubber, chapter dots, URL hashes and browser Back/Forward navigation.
@@ -69,6 +69,7 @@ styles.css
 src/main.js                 # 3D paper renderer, scene geometry, animation and interactions
 assets/puppet-atlas.svg     # local cut-card texture atlas
 assets/puppet-atlas.json    # atlas rectangles and pivots
+assets/puppet-parts-sheet.svg # white-background separated puppet parts sheet
 public/icon.svg
 manifest.webmanifest
 sw.js
