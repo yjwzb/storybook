@@ -1,6 +1,6 @@
 {
   "appId": "com.yjwzb.paperisland",
-  "appName": "The Paper Island",
+  "appName": "The Folded Atlas",
   "webDir": "dist",
   "bundledWebRuntime": false,
   "server": { "androidScheme": "https" }

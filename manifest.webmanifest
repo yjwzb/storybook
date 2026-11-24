@@ -1,12 +1,12 @@
 {
-  "name": "The Paper Island — A Pop-up Story",
-  "short_name": "Paper Island",
-  "description": "An interactive paper-crafted storybook about Pip the fox.",
+  "name": "The Folded Atlas — A Pop-up Story",
+  "short_name": "Folded Atlas",
+  "description": "A tactile paper-crafted storybook following Pip through Lantern Valley.",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
   "orientation": "any",
-  "background_color": "#172e2a",
-  "theme_color": "#172e2a",
-  "icons": [{ "src": "./public/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }]
+  "background_color": "#193b31",
+  "theme_color": "#193b31",
+  "icons": [{ "src": "./icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }]
 }
