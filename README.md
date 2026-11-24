@@ -15,7 +15,7 @@ A single-source interactive paper storybook for the browser, with a shared web r
 
 ## Rendering approach
 
-The first runtime is self-contained. It uses a small Canvas 2D software renderer with world-space XYZ geometry, perspective projection, depth sorting, polygon shading, card textures and a subdivided animated page mesh. It does not load Three.js, remote fonts, image URLs, model downloads or CDN scripts. Scenery is generated from code; the puppet atlas is stored locally so the page can run offline after its first visit.
+The first runtime is self-contained. It uses a lightweight Canvas 2D software 3D renderer with world-space XYZ geometry, perspective projection, depth sorting, polygon shading, card textures and a subdivided animated page mesh. It does not load remote fonts, image URLs, model downloads or CDN scripts. Scenery is generated from code; the puppet atlas is stored locally so the page can run offline after its first visit.
 
 ## Run locally
 
@@ -75,5 +75,4 @@ sw.js
 capacitor.config.json
 server.mjs
 build.mjs
-tools/make-atlas.py         # regenerates the SVG atlas and pivot manifest
 ```
