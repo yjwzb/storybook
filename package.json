@@ -1,0 +1,20 @@
+{
+  "name": "the-paper-island",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "A tactile interactive 3D pop-up storybook for web, iOS and Android.",
+  "scripts": {
+    "dev": "node server.mjs",
+    "build": "node build.mjs",
+    "preview": "node server.mjs --dir dist --port 4174",
+    "check": "node --check src/main.js && node --check server.mjs && node --check build.mjs",
+    "cap:add:android": "npm run build && npx cap add android",
+    "cap:add:ios": "npm run build && npx cap add ios",
+    "cap:sync": "npm run build && npx cap sync",
+    "cap:open:android": "npx cap open android",
+    "cap:open:ios": "npx cap open ios"
+  },
+  "dependencies": { "@capacitor/core": "^8.6.2" },
+  "devDependencies": { "@capacitor/cli": "^8.6.2", "@capacitor/android": "^8.6.2", "@capacitor/ios": "^8.6.2" }
+}
