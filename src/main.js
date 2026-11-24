@@ -69,7 +69,8 @@ addSprite(`${character}-body`,x,charY,z,.68*scale,bodyH,Math.sin(f)*.035*pop);
 addSprite(`${character}-leftarm`,x-.34*scale,charY-.012,z+.12*scale,.34*scale,.62*scale,Math.sin(f+1)*.18*pop);
 addSprite(`${character}-rightarm`,x+.34*scale,charY-.016,z+.12*scale,.34*scale,.62*scale,Math.sin(f+2)*.18*pop);
 addSprite(`${character}-feet`,x,charY-.03,z-.015,.72*scale,.34*scale,Math.sin(f*1.5)*.08*pop);
-addSprite(`${character}-head`,x,charY-.04,z+bodyH-.12*scale,.78*scale,.72*scale,Math.sin(f*.8)*.08*pop);\naddSprite(`${character}-eyes`,x,charY-.043,z+bodyH-.12*scale,.78*scale,.72*scale,Math.sin(f*.8)*.08*pop);
+addSprite(`${character}-head`,x,charY-.04,z+bodyH-.12*scale,.78*scale,.72*scale,Math.sin(f*.8)*.08*pop);
+addSprite(`${character}-eyes`,x,charY-.043,z+bodyH-.12*scale,.78*scale,.72*scale,Math.sin(f*.8)*.08*pop);
 // Props are independent paper cards, attached to the outside paw so they can be animated later.
 if(character==='pip')addSprite('pip-prop',x+.42*scale,charY-.06,z+.22*scale,.34*scale,.48*scale,Math.sin(f+2)*.06*pop);
 else addSprite(`${character}-prop`,x+.42*scale,charY-.06,z+.18*scale,.34*scale,.45*scale,Math.sin(f+2)*.05*pop);
