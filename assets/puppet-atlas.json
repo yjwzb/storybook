@@ -1,0 +1,584 @@
+{
+  "width": 1024,
+  "height": 768,
+  "cellSize": 128,
+  "description": "Separate cut-card puppet pieces with a thick cream die-cut border. Sprite coordinates are pixel rectangles; pivots are normalized within each rectangle.",
+  "sprites": {
+    "pip-head": {
+      "x": 4,
+      "y": 4,
+      "w": 120,
+      "h": 120,
+      "pivot": [
+        0.5,
+        1
+      ],
+      "part": "head",
+      "character": "pip"
+    },
+    "pip-eyes": {
+      "x": 132,
+      "y": 4,
+      "w": 120,
+      "h": 120,
+      "pivot": [
+        0.5,
+        1
+      ],
+      "part": "eyes",
+      "character": "pip"
+    },
+    "pip-body": {
+      "x": 260,
+      "y": 4,
+      "w": 120,
+      "h": 120,
+      "pivot": [
+        0.5,
+        1
+      ],
+      "part": "body",
+      "character": "pip"
+    },
+    "pip-leftarm": {
+      "x": 388,
+      "y": 4,
+      "w": 120,
+      "h": 120,
+      "pivot": [
+        0.5,
+        1
+      ],
+      "part": "leftarm",
+      "character": "pip"
+    },
+    "pip-rightarm": {
+      "x": 516,
+      "y": 4,
+      "w": 120,
+      "h": 120,
+      "pivot": [
+        0.5,
+        1
+      ],
+      "part": "rightarm",
+      "character": "pip"
+    },
+    "pip-feet": {
+      "x": 644,
+      "y": 4,
+      "w": 120,
+      "h": 120,
+      "pivot": [
+        0.5,
+        1
+      ],
+      "part": "feet",
+      "character": "pip"
+    },
+    "pip-tail": {
+      "x": 772,
+      "y": 4,
+      "w": 120,
+      "h": 120,
+      "pivot": [
+        0.5,
+        1
+      ],
+      "part": "tail",
+      "character": "pip"
+    },
+    "pip-prop": {
+      "x": 900,
+      "y": 4,
+      "w": 120,
+      "h": 120,
+      "pivot": [
+        0.5,
+        1
+      ],
+      "part": "prop",
+      "character": "pip"
+    },
+    "owl-head": {
+      "x": 4,
+      "y": 132,
+      "w": 120,
+      "h": 120,
+      "pivot": [
+        0.5,
+        1
+      ],
+      "part": "head",
+      "character": "owl"
+    },
+    "owl-eyes": {
+      "x": 132,
+      "y": 132,
+      "w": 120,
+      "h": 120,
+      "pivot": [
+        0.5,
+        1
+      ],
+      "part": "eyes",
+      "character": "owl"
+    },
+    "owl-body": {
+      "x": 260,
+      "y": 132,
+      "w": 120,
+      "h": 120,
+      "pivot": [
+        0.5,
+        1
+      ],
+      "part": "body",
+      "character": "owl"
+    },
+    "owl-leftarm": {
+      "x": 388,
+      "y": 132,
+      "w": 120,
+      "h": 120,
+      "pivot": [
+        0.5,
+        1
+      ],
+      "part": "leftarm",
+      "character": "owl"
+    },
+    "owl-rightarm": {
+      "x": 516,
+      "y": 132,
+      "w": 120,
+      "h": 120,
+      "pivot": [
+        0.5,
+        1
+      ],
+      "part": "rightarm",
+      "character": "owl"
+    },
+    "owl-feet": {
+      "x": 644,
+      "y": 132,
+      "w": 120,
+      "h": 120,
+      "pivot": [
+        0.5,
+        1
+      ],
+      "part": "feet",
+      "character": "owl"
+    },
+    "owl-tail": {
+      "x": 772,
+      "y": 132,
+      "w": 120,
+      "h": 120,
+      "pivot": [
+        0.5,
+        1
+      ],
+      "part": "tail",
+      "character": "owl"
+    },
+    "owl-prop": {
+      "x": 900,
+      "y": 132,
+      "w": 120,
+      "h": 120,
+      "pivot": [
+        0.5,
+        1
+      ],
+      "part": "prop",
+      "character": "owl"
+    },
+    "frog-head": {
+      "x": 4,
+      "y": 260,
+      "w": 120,
+      "h": 120,
+      "pivot": [
+        0.5,
+        1
+      ],
+      "part": "head",
+      "character": "frog"
+    },
+    "frog-eyes": {
+      "x": 132,
+      "y": 260,
+      "w": 120,
+      "h": 120,
+      "pivot": [
+        0.5,
+        1
+      ],
+      "part": "eyes",
+      "character": "frog"
+    },
+    "frog-body": {
+      "x": 260,
+      "y": 260,
+      "w": 120,
+      "h": 120,
+      "pivot": [
+        0.5,
+        1
+      ],
+      "part": "body",
+      "character": "frog"
+    },
+    "frog-leftarm": {
+      "x": 388,
+      "y": 260,
+      "w": 120,
+      "h": 120,
+      "pivot": [
+        0.5,
+        1
+      ],
+      "part": "leftarm",
+      "character": "frog"
+    },
+    "frog-rightarm": {
+      "x": 516,
+      "y": 260,
+      "w": 120,
+      "h": 120,
+      "pivot": [
+        0.5,
+        1
+      ],
+      "part": "rightarm",
+      "character": "frog"
+    },
+    "frog-feet": {
+      "x": 644,
+      "y": 260,
+      "w": 120,
+      "h": 120,
+      "pivot": [
+        0.5,
+        1
+      ],
+      "part": "feet",
+      "character": "frog"
+    },
+    "frog-tail": {
+      "x": 772,
+      "y": 260,
+      "w": 120,
+      "h": 120,
+      "pivot": [
+        0.5,
+        1
+      ],
+      "part": "tail",
+      "character": "frog"
+    },
+    "frog-prop": {
+      "x": 900,
+      "y": 260,
+      "w": 120,
+      "h": 120,
+      "pivot": [
+        0.5,
+        1
+      ],
+      "part": "prop",
+      "character": "frog"
+    },
+    "mouse-head": {
+      "x": 4,
+      "y": 388,
+      "w": 120,
+      "h": 120,
+      "pivot": [
+        0.5,
+        1
+      ],
+      "part": "head",
+      "character": "mouse"
+    },
+    "mouse-eyes": {
+      "x": 132,
+      "y": 388,
+      "w": 120,
+      "h": 120,
+      "pivot": [
+        0.5,
+        1
+      ],
+      "part": "eyes",
+      "character": "mouse"
+    },
+    "mouse-body": {
+      "x": 260,
+      "y": 388,
+      "w": 120,
+      "h": 120,
+      "pivot": [
+        0.5,
+        1
+      ],
+      "part": "body",
+      "character": "mouse"
+    },
+    "mouse-leftarm": {
+      "x": 388,
+      "y": 388,
+      "w": 120,
+      "h": 120,
+      "pivot": [
+        0.5,
+        1
+      ],
+      "part": "leftarm",
+      "character": "mouse"
+    },
+    "mouse-rightarm": {
+      "x": 516,
+      "y": 388,
+      "w": 120,
+      "h": 120,
+      "pivot": [
+        0.5,
+        1
+      ],
+      "part": "rightarm",
+      "character": "mouse"
+    },
+    "mouse-feet": {
+      "x": 644,
+      "y": 388,
+      "w": 120,
+      "h": 120,
+      "pivot": [
+        0.5,
+        1
+      ],
+      "part": "feet",
+      "character": "mouse"
+    },
+    "mouse-tail": {
+      "x": 772,
+      "y": 388,
+      "w": 120,
+      "h": 120,
+      "pivot": [
+        0.5,
+        1
+      ],
+      "part": "tail",
+      "character": "mouse"
+    },
+    "mouse-prop": {
+      "x": 900,
+      "y": 388,
+      "w": 120,
+      "h": 120,
+      "pivot": [
+        0.5,
+        1
+      ],
+      "part": "prop",
+      "character": "mouse"
+    },
+    "hedgehog-head": {
+      "x": 4,
+      "y": 516,
+      "w": 120,
+      "h": 120,
+      "pivot": [
+        0.5,
+        1
+      ],
+      "part": "head",
+      "character": "hedgehog"
+    },
+    "hedgehog-eyes": {
+      "x": 132,
+      "y": 516,
+      "w": 120,
+      "h": 120,
+      "pivot": [
+        0.5,
+        1
+      ],
+      "part": "eyes",
+      "character": "hedgehog"
+    },
+    "hedgehog-body": {
+      "x": 260,
+      "y": 516,
+      "w": 120,
+      "h": 120,
+      "pivot": [
+        0.5,
+        1
+      ],
+      "part": "body",
+      "character": "hedgehog"
+    },
+    "hedgehog-leftarm": {
+      "x": 388,
+      "y": 516,
+      "w": 120,
+      "h": 120,
+      "pivot": [
+        0.5,
+        1
+      ],
+      "part": "leftarm",
+      "character": "hedgehog"
+    },
+    "hedgehog-rightarm": {
+      "x": 516,
+      "y": 516,
+      "w": 120,
+      "h": 120,
+      "pivot": [
+        0.5,
+        1
+      ],
+      "part": "rightarm",
+      "character": "hedgehog"
+    },
+    "hedgehog-feet": {
+      "x": 644,
+      "y": 516,
+      "w": 120,
+      "h": 120,
+      "pivot": [
+        0.5,
+        1
+      ],
+      "part": "feet",
+      "character": "hedgehog"
+    },
+    "hedgehog-tail": {
+      "x": 772,
+      "y": 516,
+      "w": 120,
+      "h": 120,
+      "pivot": [
+        0.5,
+        1
+      ],
+      "part": "tail",
+      "character": "hedgehog"
+    },
+    "hedgehog-prop": {
+      "x": 900,
+      "y": 516,
+      "w": 120,
+      "h": 120,
+      "pivot": [
+        0.5,
+        1
+      ],
+      "part": "prop",
+      "character": "hedgehog"
+    },
+    "penguin-head": {
+      "x": 4,
+      "y": 644,
+      "w": 120,
+      "h": 120,
+      "pivot": [
+        0.5,
+        1
+      ],
+      "part": "head",
+      "character": "penguin"
+    },
+    "penguin-eyes": {
+      "x": 132,
+      "y": 644,
+      "w": 120,
+      "h": 120,
+      "pivot": [
+        0.5,
+        1
+      ],
+      "part": "eyes",
+      "character": "penguin"
+    },
+    "penguin-body": {
+      "x": 260,
+      "y": 644,
+      "w": 120,
+      "h": 120,
+      "pivot": [
+        0.5,
+        1
+      ],
+      "part": "body",
+      "character": "penguin"
+    },
+    "penguin-leftarm": {
+      "x": 388,
+      "y": 644,
+      "w": 120,
+      "h": 120,
+      "pivot": [
+        0.5,
+        1
+      ],
+      "part": "leftarm",
+      "character": "penguin"
+    },
+    "penguin-rightarm": {
+      "x": 516,
+      "y": 644,
+      "w": 120,
+      "h": 120,
+      "pivot": [
+        0.5,
+        1
+      ],
+      "part": "rightarm",
+      "character": "penguin"
+    },
+    "penguin-feet": {
+      "x": 644,
+      "y": 644,
+      "w": 120,
+      "h": 120,
+      "pivot": [
+        0.5,
+        1
+      ],
+      "part": "feet",
+      "character": "penguin"
+    },
+    "penguin-tail": {
+      "x": 772,
+      "y": 644,
+      "w": 120,
+      "h": 120,
+      "pivot": [
+        0.5,
+        1
+      ],
+      "part": "tail",
+      "character": "penguin"
+    },
+    "penguin-prop": {
+      "x": 900,
+      "y": 644,
+      "w": 120,
+      "h": 120,
+      "pivot": [
+        0.5,
+        1
+      ],
+      "part": "prop",
+      "character": "penguin"
+    }
+  }
+}
