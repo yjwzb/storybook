@@ -14,7 +14,8 @@
         1
       ],
       "part": "head",
-      "character": "pip"
+      "character": "pip",
+      "joint": "neck"
     },
     "pip-eyes": {
       "x": 132,
@@ -26,7 +27,8 @@
         1
       ],
       "part": "eyes",
-      "character": "pip"
+      "character": "pip",
+      "joint": "face"
     },
     "pip-body": {
       "x": 260,
@@ -38,7 +40,8 @@
         1
       ],
       "part": "body",
-      "character": "pip"
+      "character": "pip",
+      "joint": "pelvis"
     },
     "pip-leftarm": {
       "x": 388,
@@ -47,10 +50,11 @@
       "h": 120,
       "pivot": [
         0.5,
-        1
+        0.28
       ],
       "part": "leftarm",
-      "character": "pip"
+      "character": "pip",
+      "joint": "left_shoulder"
     },
     "pip-rightarm": {
       "x": 516,
@@ -59,10 +63,11 @@
       "h": 120,
       "pivot": [
         0.5,
-        1
+        0.28
       ],
       "part": "rightarm",
-      "character": "pip"
+      "character": "pip",
+      "joint": "right_shoulder"
     },
     "pip-feet": {
       "x": 644,
@@ -71,10 +76,11 @@
       "h": 120,
       "pivot": [
         0.5,
-        1
+        0.08
       ],
       "part": "feet",
-      "character": "pip"
+      "character": "pip",
+      "joint": "ankle"
     },
     "pip-tail": {
       "x": 772,
@@ -82,11 +88,12 @@
       "w": 120,
       "h": 120,
       "pivot": [
-        0.5,
-        1
+        0.82,
+        0.52
       ],
       "part": "tail",
-      "character": "pip"
+      "character": "pip",
+      "joint": "tail_root"
     },
     "pip-prop": {
       "x": 900,
@@ -98,7 +105,8 @@
         1
       ],
       "part": "prop",
-      "character": "pip"
+      "character": "pip",
+      "joint": "paw"
     },
     "owl-head": {
       "x": 4,
@@ -110,7 +118,8 @@
         1
       ],
       "part": "head",
-      "character": "owl"
+      "character": "owl",
+      "joint": "neck"
     },
     "owl-eyes": {
       "x": 132,
@@ -122,7 +131,8 @@
         1
       ],
       "part": "eyes",
-      "character": "owl"
+      "character": "owl",
+      "joint": "face"
     },
     "owl-body": {
       "x": 260,
@@ -134,7 +144,8 @@
         1
       ],
       "part": "body",
-      "character": "owl"
+      "character": "owl",
+      "joint": "pelvis"
     },
     "owl-leftarm": {
       "x": 388,
@@ -143,10 +154,11 @@
       "h": 120,
       "pivot": [
         0.5,
-        1
+        0.28
       ],
       "part": "leftarm",
-      "character": "owl"
+      "character": "owl",
+      "joint": "left_shoulder"
     },
     "owl-rightarm": {
       "x": 516,
@@ -155,10 +167,11 @@
       "h": 120,
       "pivot": [
         0.5,
-        1
+        0.28
       ],
       "part": "rightarm",
-      "character": "owl"
+      "character": "owl",
+      "joint": "right_shoulder"
     },
     "owl-feet": {
       "x": 644,
@@ -167,10 +180,11 @@
       "h": 120,
       "pivot": [
         0.5,
-        1
+        0.08
       ],
       "part": "feet",
-      "character": "owl"
+      "character": "owl",
+      "joint": "ankle"
     },
     "owl-tail": {
       "x": 772,
@@ -194,7 +208,8 @@
         1
       ],
       "part": "prop",
-      "character": "owl"
+      "character": "owl",
+      "joint": "paw"
     },
     "frog-head": {
       "x": 4,
@@ -206,7 +221,8 @@
         1
       ],
       "part": "head",
-      "character": "frog"
+      "character": "frog",
+      "joint": "neck"
     },
     "frog-eyes": {
       "x": 132,
@@ -218,7 +234,8 @@
         1
       ],
       "part": "eyes",
-      "character": "frog"
+      "character": "frog",
+      "joint": "face"
     },
     "frog-body": {
       "x": 260,
@@ -230,7 +247,8 @@
         1
       ],
       "part": "body",
-      "character": "frog"
+      "character": "frog",
+      "joint": "pelvis"
     },
     "frog-leftarm": {
       "x": 388,
@@ -239,10 +257,11 @@
       "h": 120,
       "pivot": [
         0.5,
-        1
+        0.28
       ],
       "part": "leftarm",
-      "character": "frog"
+      "character": "frog",
+      "joint": "left_shoulder"
     },
     "frog-rightarm": {
       "x": 516,
@@ -251,10 +270,11 @@
       "h": 120,
       "pivot": [
         0.5,
-        1
+        0.28
       ],
       "part": "rightarm",
-      "character": "frog"
+      "character": "frog",
+      "joint": "right_shoulder"
     },
     "frog-feet": {
       "x": 644,
@@ -263,10 +283,11 @@
       "h": 120,
       "pivot": [
         0.5,
-        1
+        0.08
       ],
       "part": "feet",
-      "character": "frog"
+      "character": "frog",
+      "joint": "ankle"
     },
     "frog-tail": {
       "x": 772,
@@ -290,7 +311,8 @@
         1
       ],
       "part": "prop",
-      "character": "frog"
+      "character": "frog",
+      "joint": "paw"
     },
     "mouse-head": {
       "x": 4,
@@ -302,7 +324,8 @@
         1
       ],
       "part": "head",
-      "character": "mouse"
+      "character": "mouse",
+      "joint": "neck"
     },
     "mouse-eyes": {
       "x": 132,
@@ -314,7 +337,8 @@
         1
       ],
       "part": "eyes",
-      "character": "mouse"
+      "character": "mouse",
+      "joint": "face"
     },
     "mouse-body": {
       "x": 260,
@@ -326,7 +350,8 @@
         1
       ],
       "part": "body",
-      "character": "mouse"
+      "character": "mouse",
+      "joint": "pelvis"
     },
     "mouse-leftarm": {
       "x": 388,
@@ -335,10 +360,11 @@
       "h": 120,
       "pivot": [
         0.5,
-        1
+        0.28
       ],
       "part": "leftarm",
-      "character": "mouse"
+      "character": "mouse",
+      "joint": "left_shoulder"
     },
     "mouse-rightarm": {
       "x": 516,
@@ -347,10 +373,11 @@
       "h": 120,
       "pivot": [
         0.5,
-        1
+        0.28
       ],
       "part": "rightarm",
-      "character": "mouse"
+      "character": "mouse",
+      "joint": "right_shoulder"
     },
     "mouse-feet": {
       "x": 644,
@@ -359,10 +386,11 @@
       "h": 120,
       "pivot": [
         0.5,
-        1
+        0.08
       ],
       "part": "feet",
-      "character": "mouse"
+      "character": "mouse",
+      "joint": "ankle"
     },
     "mouse-tail": {
       "x": 772,
@@ -370,11 +398,12 @@
       "w": 120,
       "h": 120,
       "pivot": [
-        0.5,
-        1
+        0.82,
+        0.52
       ],
       "part": "tail",
-      "character": "mouse"
+      "character": "mouse",
+      "joint": "tail_root"
     },
     "mouse-prop": {
       "x": 900,
@@ -386,7 +415,8 @@
         1
       ],
       "part": "prop",
-      "character": "mouse"
+      "character": "mouse",
+      "joint": "paw"
     },
     "hedgehog-head": {
       "x": 4,
@@ -398,7 +428,8 @@
         1
       ],
       "part": "head",
-      "character": "hedgehog"
+      "character": "hedgehog",
+      "joint": "neck"
     },
     "hedgehog-eyes": {
       "x": 132,
@@ -410,7 +441,8 @@
         1
       ],
       "part": "eyes",
-      "character": "hedgehog"
+      "character": "hedgehog",
+      "joint": "face"
     },
     "hedgehog-body": {
       "x": 260,
@@ -422,7 +454,8 @@
         1
       ],
       "part": "body",
-      "character": "hedgehog"
+      "character": "hedgehog",
+      "joint": "pelvis"
     },
     "hedgehog-leftarm": {
       "x": 388,
@@ -431,10 +464,11 @@
       "h": 120,
       "pivot": [
         0.5,
-        1
+        0.28
       ],
       "part": "leftarm",
-      "character": "hedgehog"
+      "character": "hedgehog",
+      "joint": "left_shoulder"
     },
     "hedgehog-rightarm": {
       "x": 516,
@@ -443,10 +477,11 @@
       "h": 120,
       "pivot": [
         0.5,
-        1
+        0.28
       ],
       "part": "rightarm",
-      "character": "hedgehog"
+      "character": "hedgehog",
+      "joint": "right_shoulder"
     },
     "hedgehog-feet": {
       "x": 644,
@@ -455,10 +490,11 @@
       "h": 120,
       "pivot": [
         0.5,
-        1
+        0.08
       ],
       "part": "feet",
-      "character": "hedgehog"
+      "character": "hedgehog",
+      "joint": "ankle"
     },
     "hedgehog-tail": {
       "x": 772,
@@ -482,7 +518,8 @@
         1
       ],
       "part": "prop",
-      "character": "hedgehog"
+      "character": "hedgehog",
+      "joint": "paw"
     },
     "penguin-head": {
       "x": 4,
@@ -494,7 +531,8 @@
         1
       ],
       "part": "head",
-      "character": "penguin"
+      "character": "penguin",
+      "joint": "neck"
     },
     "penguin-eyes": {
       "x": 132,
@@ -506,7 +544,8 @@
         1
       ],
       "part": "eyes",
-      "character": "penguin"
+      "character": "penguin",
+      "joint": "face"
     },
     "penguin-body": {
       "x": 260,
@@ -518,7 +557,8 @@
         1
       ],
       "part": "body",
-      "character": "penguin"
+      "character": "penguin",
+      "joint": "pelvis"
     },
     "penguin-leftarm": {
       "x": 388,
@@ -527,10 +567,11 @@
       "h": 120,
       "pivot": [
         0.5,
-        1
+        0.28
       ],
       "part": "leftarm",
-      "character": "penguin"
+      "character": "penguin",
+      "joint": "left_shoulder"
     },
     "penguin-rightarm": {
       "x": 516,
@@ -539,10 +580,11 @@
       "h": 120,
       "pivot": [
         0.5,
-        1
+        0.28
       ],
       "part": "rightarm",
-      "character": "penguin"
+      "character": "penguin",
+      "joint": "right_shoulder"
     },
     "penguin-feet": {
       "x": 644,
@@ -551,10 +593,11 @@
       "h": 120,
       "pivot": [
         0.5,
-        1
+        0.08
       ],
       "part": "feet",
-      "character": "penguin"
+      "character": "penguin",
+      "joint": "ankle"
     },
     "penguin-tail": {
       "x": 772,
@@ -578,7 +621,8 @@
         1
       ],
       "part": "prop",
-      "character": "penguin"
+      "character": "penguin",
+      "joint": "paw"
     }
   }
 }
