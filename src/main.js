@@ -30,7 +30,7 @@ state.currentPop=1; state.lampClock=0; state.lampSequence=0;
 let camBasis;
 function resize(){width=innerWidth;height=innerHeight;dpr=Math.min(devicePixelRatio||1,(innerWidth<760?1.35:1.65));canvas.width=Math.round(width*dpr);canvas.height=Math.round(height*dpr);canvas.style.width=width+'px';canvas.style.height=height+'px';ctx.setTransform(dpr,0,0,dpr,0,0);}
 addEventListener('resize',resize,{passive:true});resize();
-function updateCamera(){const dir=norm(sub(camera.target,camera.pos));const right=norm(cross(dir,[0,0,1]));const up=norm(cross(right,dir));camBasis={dir,right,up};const depth=24;const focal=Math.min(width*.92/12.8*depth,height*.70/9.2*depth);camera.fov=2*Math.atan(height/(2*focal))*180/Math.PI;}
+function updateCamera(){const dir=norm(sub(camera.target,camera.pos));const right=norm(cross(dir,[0,0,1]));const up=norm(cross(right,dir));camBasis={dir,right,up};const depth=24;const focal=Math.min(width*.95/12.35*depth,height*.97/7.45*depth);camera.fov=2*Math.atan(height/(2*focal))*180/Math.PI;}
 function rotateWorld(p){const a=state.tableYaw+(state.chapter===4?-.035:0),c=Math.cos(a),s=Math.sin(a);return [p[0]*c-p[1]*s,p[0]*s+p[1]*c,p[2]];}
 function project(p){const pp=[p[0],p[1],p[2]>.12?.12+(p[2]-.12)*state.currentPop:p[2]];const q=rotateWorld(pp),r=sub(q,camera.pos),z=dot(r,camBasis.dir);if(z<=.08)return {x:-10000,y:-10000,z};const f=height/(2*Math.tan(camera.fov*Math.PI/360));return {x:width*.5+dot(r,camBasis.right)*f/z,y:height*.5-dot(r,camBasis.up)*f/z,z};}
 function pushPoly(points,color,stroke=null,lineWidth=1,shadow=0){const ps=points.map(project);if(ps.some(p=>!Number.isFinite(p.x)||p.x<-3000))return;commands.push({z:ps.reduce((s,p)=>s+p.z,0)/ps.length,draw(){ctx.beginPath();ctx.moveTo(ps[0].x,ps[0].y);for(let i=1;i<ps.length;i++)ctx.lineTo(ps[i].x,ps[i].y);ctx.closePath();if(shadow){ctx.shadowColor='rgba(22,20,12,.22)';ctx.shadowBlur=shadow;ctx.shadowOffsetY=shadow*.35;}ctx.fillStyle=color;ctx.fill();ctx.shadowColor='transparent';ctx.shadowBlur=0;ctx.shadowOffsetY=0;if(stroke){ctx.strokeStyle=stroke;ctx.lineWidth=lineWidth;ctx.lineJoin='round';ctx.stroke();}}});}
@@ -230,7 +230,7 @@ function triggerProp(){
 function screenOf(world){return project(world);}
 function hitLandmark(p){
   const targets=[
-    [2.55,.85,2.65],
+    [1.6,.37,2.05],
     [2.55,.8,1.65],
     [2.45,.9,2.2],
     [2.45,.33,2.7],
