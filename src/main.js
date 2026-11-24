@@ -61,14 +61,14 @@ else{pushText('THE PAPER ISLAND',point(.2,.15),9,'#a18b63',false);}
 // little map border and corner leaf marks
 const border=[[.035,.05],[.965,.05],[.965,.95],[.035,.95],[.035,.05]].map(q=>point(q[0],q[1]));pushLine(border,'rgba(153,119,72,.28)',.8);
 }
-function addSprite(name,cx,cy,bottomZ,w,h,angle=0,alpha=1){if(!atlasReady)return;const m=atlasMeta.sprites[name];if(!m)return;const c=Math.cos(angle),s=Math.sin(angle);const local=(lx,lz)=>[cx+lx*c-lz*s,cy,bottomZ+lz*c+lx*s];const tl=local(-w/2,h),tr=local(w/2,h),bl=local(-w/2,0),br=local(w/2,0);const pts=[tl,tr,br,bl].map(project);const depth=pts.reduce((a,p)=>a+p.z,0)/4;commands.push({z:depth-.001,draw(){const sw=m.w,sh=m.h,p0=pts[0],p1=pts[1],p2=pts[3];const a=(p1.x-p0.x)/sw,b=(p1.y-p0.y)/sw,cxv=(p2.x-p0.x)/sh,dy=(p2.y-p0.y)/sh;ctx.save();ctx.globalAlpha=alpha;ctx.setTransform(dpr*a,dpr*b,dpr*cxv,dpr*dy,dpr*p0.x,dpr*p0.y);ctx.drawImage(atlas,m.x,m.y,m.w,m.h,0,0,sw,sh);ctx.restore();ctx.setTransform(dpr,0,0,dpr,0,0);}});}
+function addSprite(name,cx,cy,pivotZ,w,h,angle=0,alpha=1){if(!atlasReady)return;const m=atlasMeta.sprites[name];if(!m)return;const c=Math.cos(angle),s=Math.sin(angle),px=m.pivot?.[0]??.5,py=m.pivot?.[1]??1;const local=(u,v)=>{const lx=(u-px)*w,lz=(py-v)*h;return [cx+lx*c-lz*s,cy,pivotZ+lz*c+lx*s];};const tl=local(0,0),tr=local(1,0),bl=local(0,1),br=local(1,1);const pts=[tl,tr,br,bl].map(project);const depth=pts.reduce((a,p)=>a+p.z,0)/4;commands.push({z:depth-.001,draw(){const sw=m.w,sh=m.h,p0=pts[0],p1=pts[1],p2=pts[3];const a=(p1.x-p0.x)/sw,b=(p1.y-p0.y)/sw,cxv=(p2.x-p0.x)/sh,dy=(p2.y-p0.y)/sh;ctx.save();ctx.globalAlpha=alpha;ctx.setTransform(dpr*a,dpr*b,dpr*cxv,dpr*dy,dpr*p0.x,dpr*p0.y);ctx.drawImage(atlas,m.x,m.y,m.w,m.h,0,0,sw,sh);ctx.restore();ctx.setTransform(dpr,0,0,dpr,0,0);}});}
 function addPuppet(character,x,y,baseZ,pop=1,phase=0,scale=1){const bob=Math.sin(state.t*2.7+phase)*.045*pop;const z=baseZ+bob;const f=state.t*2.4+phase;const h=1.05*scale*pop;const bodyH=.72*scale*pop;const charY=y-.025;
-if(character==='pip'||character==='mouse')addSprite(`${character}-tail`,x-.38*scale,charY+.015,z,.68*scale,.62*scale,Math.sin(f*1.1)*.28*pop);
+if(character==='pip'||character==='mouse')addSprite(`${character}-tail`,x-.16*scale,charY+.015,z+.31*scale,.68*scale,.62*scale,Math.sin(f*1.1)*.28*pop);
 if(character==='owl')addSprite(`${character}-tail`,x-.02*scale,charY+.04,z+.12*scale,.82*scale,.56*scale,Math.sin(f*1.1)*.06*pop);
 addSprite(`${character}-body`,x,charY,z,.68*scale,bodyH,Math.sin(f)*.035*pop);
-addSprite(`${character}-leftarm`,x-.34*scale,charY-.012,z+.12*scale,.34*scale,.62*scale,Math.sin(f+1)*.18*pop);
-addSprite(`${character}-rightarm`,x+.34*scale,charY-.016,z+.12*scale,.34*scale,.62*scale,Math.sin(f+2)*.18*pop);
-addSprite(`${character}-feet`,x,charY-.03,z-.015,.72*scale,.34*scale,Math.sin(f*1.5)*.08*pop);
+addSprite(`${character}-leftarm`,x-.34*scale,charY-.012,z+.12*scale+.62*scale*.72,.34*scale,.62*scale,Math.sin(f+1)*.18*pop);
+addSprite(`${character}-rightarm`,x+.34*scale,charY-.016,z+.12*scale+.62*scale*.72,.34*scale,.62*scale,Math.sin(f+2)*.18*pop);
+addSprite(`${character}-feet`,x,charY-.03,z-.015+.34*scale*.92,.72*scale,.34*scale,Math.sin(f*1.5)*.08*pop);
 addSprite(`${character}-head`,x,charY-.04,z+bodyH-.12*scale,.78*scale,.72*scale,Math.sin(f*.8)*.08*pop);
 addSprite(`${character}-eyes`,x,charY-.043,z+bodyH-.12*scale,.78*scale,.72*scale,Math.sin(f*.8)*.08*pop);
 // Props are independent paper cards, attached to the outside paw so they can be animated later.
